@@ -1,0 +1,8 @@
+{
+    "serviceName": "store-monitoring",
+    "host": "0.0.0.0",
+    "port": "8080",
+    "mysql" :{
+        "dsn": "root:password@tcp(localhost:3307)/storeMonitoring?parseTime=true&loc=UTC"
+    }
+}
