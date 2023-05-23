@@ -19,7 +19,7 @@ func TriggerReport(w http.ResponseWriter, r *http.Request) {
 			defer func() {
 				if r := recover(); r != nil {
 					reportStatus := db.ReportStatus{ReportID: reportID.String(), Status: "Error"}
-					helper.DB.Create(&reportStatus)
+					helper.DB.Save(&reportStatus)
 				}
 				<-runningReportsChan
 			}()

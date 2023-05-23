@@ -101,7 +101,7 @@ func populateTimezone(filename string) error {
 			continue
 		}
 		timezone := &db.Timezone{StoreID: record[0], TimezoneStr: record[1]}
-		fmt.Println(record[0], record[1])
+		//fmt.Println(record[0], record[1])
 		helper.DB.Create(timezone)
 	}
 	return nil
