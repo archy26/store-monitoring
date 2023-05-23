@@ -72,8 +72,6 @@ func BuildReport(reportId string) error {
 
 	//pushing into file
 	err := createFileAndUpdateReportStatus(reportId, rows)
-	time.Sleep(2*time.Second + 500*time.Millisecond)
-
 	return err
 }
 
@@ -135,7 +133,7 @@ func getupdateoftoday(storeID string, weekday int, businessHours []db.StoreBusin
 
 		openingHour := time.Date(maxCurrTime.Year(), maxCurrTime.Month(), maxCurrTime.Day(), hour, minute, second, 0, timezone)
 		endingHour := time.Date(maxCurrTime.Year(), maxCurrTime.Month(), maxCurrTime.Day(), hour1, minute1, second1, 0, timezone)
-		fmt.Println(openingHour, endingHour)
+		//fmt.Println(openingHour, endingHour)
 		totalTime += endingHour.Sub(openingHour).Hours()
 		prevTimestamp := openingHour
 		lastStatus := ""
@@ -144,7 +142,7 @@ func getupdateoftoday(storeID string, weekday int, businessHours []db.StoreBusin
 			diff := newTimezone.Sub(prevTimestamp).Hours()
 
 			if status.Status == "active" && diff >= 0 && newTimezone.Before(endingHour) && newTimezone.After(openingHour) {
-				fmt.Println(newTimezone, diff)
+				// fmt.Println(newTimezone, diff)
 				uptime += diff
 			}
 			prevTimestamp = newTimezone
