@@ -1,6 +1,6 @@
 ## store-monitoring
 step 1 :-
-clone this repo under $GOPATH/src/github.com/store-monitoring
+clone this repo under $GOPATH/src/github.com/
 
 step 2 :- 
 download all the CVs and put this inside data folder like below
