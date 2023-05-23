@@ -36,5 +36,6 @@ curl --location 'http://0.0.0.0:8080/get_report?report_id={report-id}'
 
 # Few other details 
 
-1) if you restart the server all tables will be dropped and all the data from the table will be removed .
-2) each report is pushed in "/data" folder
+1) If you restart the server all tables will be dropped and all the data from the table will be removed , it creates new tables  each time  server is started.
+2) Each report is pushed in "/data" folder
+3) Also I've not put database query in db layer because of less time.
