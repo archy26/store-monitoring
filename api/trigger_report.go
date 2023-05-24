@@ -2,14 +2,15 @@ package api
 
 import (
 	"fmt"
+	"net/http"
+
 	"github.com/google/uuid"
 	"github.com/store-monitoring/db"
 	"github.com/store-monitoring/helper"
 	"github.com/store-monitoring/logic"
-	"net/http"
 )
 
-var runningReportsChan = make(chan struct{}, 1)
+var runningReportsChan = make(chan struct{}, 10)
 
 func TriggerReport(w http.ResponseWriter, r *http.Request) {
 	reportID := uuid.New()
